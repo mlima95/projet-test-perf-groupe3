@@ -1,0 +1,34 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:alpine
+    container_name: db_docker_symfony
+    ports:
+      - 5432:5432
+    restart: always
+    volumes:
+      - db-data:/var/lib/postgresql/data:rw
+    environment:
+      POSTGRES_DB: app
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+    networks:
+      - dev
+
+  www:
+    build: php
+    container_name: www_docker_symfony
+    ports:
+      - "8741:80"
+    volumes:
+      - ./php/vhosts:/etc/apache2/sites-enabled:rw
+      - ./:/var/www:rw
+    restart: always
+    networks:
+      - dev
+
+networks:
+  dev:
+
+volumes:
+  db-data:
