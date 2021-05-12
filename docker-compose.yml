@@ -21,8 +21,8 @@ services:
     ports:
       - "8741:80"
     volumes:
-      - ./php/vhosts:/etc/apache2/sites-enabled:rw
-      - ./:/var/www:rw
+      - ./php/vhosts:/etc/apache2/sites-enabled
+      - ./:/var/www
     restart: always
     networks:
       - dev
