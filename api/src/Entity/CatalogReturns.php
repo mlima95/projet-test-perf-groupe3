@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * CatalogReturns
- *
+ * @ApiResource()
  * @ORM\Table(name="catalog_returns", indexes={@ORM\Index(name="cr_cc", columns={"cr_call_center_sk"}), @ORM\Index(name="cr_a2", columns={"cr_returning_addr_sk"}), @ORM\Index(name="cr_a1", columns={"cr_refunded_addr_sk"}), @ORM\Index(name="cr_hd2", columns={"cr_returning_hdemo_sk"}), @ORM\Index(name="cr_cd1", columns={"cr_refunded_cdemo_sk"}), @ORM\Index(name="cr_d1", columns={"cr_returned_date_sk"}), @ORM\Index(name="cr_hd1", columns={"cr_refunded_hdemo_sk"}), @ORM\Index(name="cr_sm", columns={"cr_ship_mode_sk"}), @ORM\Index(name="cr_r", columns={"cr_reason_sk"}), @ORM\Index(name="cr_c2", columns={"cr_returning_customer_sk"}), @ORM\Index(name="cr_w2", columns={"cr_warehouse_sk"}), @ORM\Index(name="cr_c1", columns={"cr_refunded_customer_sk"}), @ORM\Index(name="cr_t", columns={"cr_returned_time_sk"}), @ORM\Index(name="cr_cp", columns={"cr_catalog_page_sk"}), @ORM\Index(name="cr_cd2", columns={"cr_returning_cdemo_sk"}), @ORM\Index(name="IDX_84A4B1892498B756", columns={"cr_item_sk"})})
  * @ORM\Entity
  */

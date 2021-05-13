@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * CatalogPage
- *
+ * @ApiResource()
  * @ORM\Table(name="catalog_page", indexes={@ORM\Index(name="cp_d2", columns={"cp_start_date_sk"}), @ORM\Index(name="cp_d1", columns={"cp_end_date_sk"})})
  * @ORM\Entity
  */

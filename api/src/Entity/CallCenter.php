@@ -2,12 +2,13 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * CallCenter
- *
+ * @ApiResource()
  * @ORM\Table(name="call_center", indexes={@ORM\Index(name="cc_d2", columns={"cc_open_date_sk"}), @ORM\Index(name="cc_d1", columns={"cc_closed_date_sk"})})
  * @ORM\Entity
  */

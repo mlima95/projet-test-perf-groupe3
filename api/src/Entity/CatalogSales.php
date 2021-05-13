@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * CatalogSales
- *
+ * @ApiResource()
  * @ORM\Table(name="catalog_sales", indexes={@ORM\Index(name="cs_t", columns={"cs_sold_time_sk"}), @ORM\Index(name="cs_s_cd", columns={"cs_ship_cdemo_sk"}), @ORM\Index(name="cs_p", columns={"cs_promo_sk"}), @ORM\Index(name="cs_d2", columns={"cs_sold_date_sk"}), @ORM\Index(name="cs_b_hd", columns={"cs_bill_hdemo_sk"}), @ORM\Index(name="cs_w", columns={"cs_warehouse_sk"}), @ORM\Index(name="cs_b_cd", columns={"cs_bill_cdemo_sk"}), @ORM\Index(name="cs_b_c", columns={"cs_bill_customer_sk"}), @ORM\Index(name="cs_sm", columns={"cs_ship_mode_sk"}), @ORM\Index(name="cs_s_c", columns={"cs_ship_customer_sk"}), @ORM\Index(name="cs_cp", columns={"cs_catalog_page_sk"}), @ORM\Index(name="cs_cc", columns={"cs_call_center_sk"}), @ORM\Index(name="cs_s_a", columns={"cs_ship_addr_sk"}), @ORM\Index(name="cs_s_hd", columns={"cs_ship_hdemo_sk"}), @ORM\Index(name="cs_b_a", columns={"cs_bill_addr_sk"}), @ORM\Index(name="cs_d1", columns={"cs_ship_date_sk"}), @ORM\Index(name="IDX_D29211FD33E3A315", columns={"cs_item_sk"})})
  * @ORM\Entity
  */
