@@ -15,18 +15,6 @@ services:
       POSTGRES_PASSWORD: password
     networks:
       - dev
-
-  blackfire:
-    image: blackfire/blackfire:2
-    ports: [ "8307" ]
-    environment:
-      # Exposes BLACKFIRE_* environment variables from the host
-      BLACKFIRE_LOG_LEVEL: 4
-      BLACKFIRE_CLIENT_ID: "7fa1081c-f261-4454-9531-2df726365290"
-      BLACKFIRE_CLIENT_TOKEN: "a9686d0ed4e3b90acee451092bdf451c5189f5f0eed09b4df99f598bd3e25b91"
-      BLACKFIRE_SERVER_ID: "7a8cca5a-f647-4e8e-861d-4a3d8bc919b1"
-      BLACKFIRE_SERVER_TOKEN: "f1d4dfd878a11a0c6b41767a17d5faf47f3de2554297183238006f455ed7525a"
-
   www:
     build: php
     container_name: www_docker_symfony
@@ -40,6 +28,7 @@ services:
       - dev
     links:
       - blackfire
+
   blackfire:
     image: blackfire/blackfire:2
     ports:
