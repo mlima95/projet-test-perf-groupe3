@@ -38,7 +38,8 @@ services:
     restart: always
     networks:
       - dev
-
+    links:
+      - blackfire
   blackfire:
     image: blackfire/blackfire:2
     ports:
