@@ -28,6 +28,19 @@ services:
     networks:
       - dev
 
+  blackfire:
+    image: blackfire/blackfire:2
+    ports:
+      - 8707:8707
+    environment:
+      # Exposes BLACKFIRE_* environment variables from the host
+      BLACKFIRE_LOG_LEVEL: 4
+      BLACKFIRE_CLIENT_ID: "7a0b22d2-8137-495f-be27-19de102ae8ee"
+      BLACKFIRE_CLIENT_TOKEN: "206b0d67ced9bfc5ee1e99f51798839801c90b29c4a0e775e772084484b002e0"
+      BLACKFIRE_SERVER_ID: "010dca3b-b106-4c2f-b1bc-677116255071"
+      BLACKFIRE_SERVER_TOKEN: "75a2ec81dc414ef938fc177cf1e5207aedb97467b62fef847e1fb38bca23abce"
+    networks:
+      - dev
 networks:
   dev:
 
