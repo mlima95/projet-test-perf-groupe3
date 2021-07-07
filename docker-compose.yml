@@ -5,7 +5,6 @@ services:
     container_name: db_docker_symfony
     ports:
       - 5432:5432
-    restart: always
     volumes:
       - db-data:/var/lib/postgresql/data:rw
       - ./dataset:/dataset
@@ -23,13 +22,13 @@ services:
     volumes:
       - ./php/vhosts:/etc/apache2/sites-enabled
       - ./:/var/www
-    restart: always
     networks:
       - dev
     links:
       - blackfire
 
   blackfire:
+    container_name: blackfire
     image: blackfire/blackfire:2
     ports:
       - 8707:8707
@@ -42,6 +41,19 @@ services:
       BLACKFIRE_SERVER_TOKEN: "75a2ec81dc414ef938fc177cf1e5207aedb97467b62fef847e1fb38bca23abce"
     networks:
       - dev
+
+  client:
+    image: node:alpine3.10
+    container_name: client
+    ports:
+      - 3000:3000
+    environment:
+      API_URL: http://localhost:3000
+    volumes:
+      - ./client:/home/node/app
+    working_dir: /home/node/app
+    command: sh -c "npm install --no-update-notifier; npm start --no-update-notifier"
+
 networks:
   dev:
 
