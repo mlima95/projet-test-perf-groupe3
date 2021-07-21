@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * CustomerAddress
- *
+ * @ApiResource()
  * @ORM\Table(name="customer_address")
  * @ORM\Entity
  */

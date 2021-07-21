@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Promotion
- *
+ * @ApiResource()
  * @ORM\Table(name="promotion", indexes={@ORM\Index(name="p_start_date", columns={"p_start_date_sk"}), @ORM\Index(name="p_i", columns={"p_item_sk"}), @ORM\Index(name="p_end_date", columns={"p_end_date_sk"})})
  * @ORM\Entity
  */

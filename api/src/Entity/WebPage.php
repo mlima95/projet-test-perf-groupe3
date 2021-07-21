@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * WebPage
- *
+ * @ApiResource()
  * @ORM\Table(name="web_page", indexes={@ORM\Index(name="wp_ad", columns={"wp_access_date_sk"}), @ORM\Index(name="wp_cd", columns={"wp_creation_date_sk"})})
  * @ORM\Entity
  */

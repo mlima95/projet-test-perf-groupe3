@@ -5,10 +5,17 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use App\Controller\CallCenterController;
 
 /**
  * CallCenter
- * @ApiResource()
+ * @ApiResource(itemOperations={
+ *     "post_callCenter"={
+ *         "method"="POST",
+ *         "path"="/call_centers/slow_random",
+ *         "controller"=CallCenterController::class,
+ *     }
+ * })
  * @ORM\Table(name="call_center", indexes={@ORM\Index(name="cc_d2", columns={"cc_open_date_sk"}), @ORM\Index(name="cc_d1", columns={"cc_closed_date_sk"})})
  * @ORM\Entity
  */

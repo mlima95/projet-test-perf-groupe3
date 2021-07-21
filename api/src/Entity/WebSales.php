@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * WebSales
- *
+ * @ApiResource()
  * @ORM\Table(name="web_sales", indexes={@ORM\Index(name="ws_p", columns={"ws_promo_sk"}), @ORM\Index(name="ws_b_cd", columns={"ws_bill_cdemo_sk"}), @ORM\Index(name="ws_b_c", columns={"ws_bill_customer_sk"}), @ORM\Index(name="ws_t", columns={"ws_sold_time_sk"}), @ORM\Index(name="ws_ws", columns={"ws_web_site_sk"}), @ORM\Index(name="ws_s_hd", columns={"ws_ship_hdemo_sk"}), @ORM\Index(name="ws_s_a", columns={"ws_ship_addr_sk"}), @ORM\Index(name="ws_b_hd", columns={"ws_bill_hdemo_sk"}), @ORM\Index(name="ws_s_cd", columns={"ws_ship_cdemo_sk"}), @ORM\Index(name="ws_wp", columns={"ws_web_page_sk"}), @ORM\Index(name="ws_s_d", columns={"ws_ship_date_sk"}), @ORM\Index(name="ws_w2", columns={"ws_warehouse_sk"}), @ORM\Index(name="ws_s_c", columns={"ws_ship_customer_sk"}), @ORM\Index(name="ws_sm", columns={"ws_ship_mode_sk"}), @ORM\Index(name="ws_b_a", columns={"ws_bill_addr_sk"}), @ORM\Index(name="ws_d2", columns={"ws_sold_date_sk"}), @ORM\Index(name="IDX_A69274DA1DA68287", columns={"ws_item_sk"})})
  * @ORM\Entity
  */

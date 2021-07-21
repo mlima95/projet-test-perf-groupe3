@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * WebSite
- *
+ * @ApiResource()
  * @ORM\Table(name="web_site", indexes={@ORM\Index(name="web_d2", columns={"web_open_date_sk"}), @ORM\Index(name="web_d1", columns={"web_close_date_sk"})})
  * @ORM\Entity
  */

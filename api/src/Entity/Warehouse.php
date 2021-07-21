@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Warehouse
- *
+ * @ApiResource()
  * @ORM\Table(name="warehouse")
  * @ORM\Entity
  */

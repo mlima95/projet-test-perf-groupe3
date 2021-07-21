@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * TimeDim
- *
+ * @ApiResource()
  * @ORM\Table(name="time_dim")
  * @ORM\Entity
  */

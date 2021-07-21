@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * StoreSales
- *
+ * @ApiResource()
  * @ORM\Table(name="store_sales", indexes={@ORM\Index(name="ss_d", columns={"ss_sold_date_sk"}), @ORM\Index(name="ss_s", columns={"ss_store_sk"}), @ORM\Index(name="ss_c", columns={"ss_customer_sk"}), @ORM\Index(name="ss_t", columns={"ss_sold_time_sk"}), @ORM\Index(name="ss_cd", columns={"ss_cdemo_sk"}), @ORM\Index(name="ss_p", columns={"ss_promo_sk"}), @ORM\Index(name="ss_hd", columns={"ss_hdemo_sk"}), @ORM\Index(name="ss_a", columns={"ss_addr_sk"}), @ORM\Index(name="IDX_17BF265D144D22FD", columns={"ss_item_sk"})})
  * @ORM\Entity
  */

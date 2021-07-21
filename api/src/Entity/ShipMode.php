@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * ShipMode
- *
+ * @ApiResource()
  * @ORM\Table(name="ship_mode")
  * @ORM\Entity
  */

@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * WebReturns
- *
+ * @ApiResource()
  * @ORM\Table(name="web_returns", indexes={@ORM\Index(name="wr_ret_t", columns={"wr_returned_time_sk"}), @ORM\Index(name="wr_ret_cd", columns={"wr_returning_cdemo_sk"}), @ORM\Index(name="wr_ret_a", columns={"wr_returning_addr_sk"}), @ORM\Index(name="wr_ref_a", columns={"wr_refunded_addr_sk"}), @ORM\Index(name="wr_ret_c", columns={"wr_returning_customer_sk"}), @ORM\Index(name="wr_ref_c", columns={"wr_refunded_customer_sk"}), @ORM\Index(name="wr_ref_cd", columns={"wr_refunded_cdemo_sk"}), @ORM\Index(name="wr_ret_d", columns={"wr_returned_date_sk"}), @ORM\Index(name="wr_ref_hd", columns={"wr_refunded_hdemo_sk"}), @ORM\Index(name="wr_wp", columns={"wr_web_page_sk"}), @ORM\Index(name="wr_ret_hd", columns={"wr_returning_hdemo_sk"}), @ORM\Index(name="wr_r", columns={"wr_reason_sk"}), @ORM\Index(name="IDX_63B9E23BADD96C4", columns={"wr_item_sk"})})
  * @ORM\Entity
  */

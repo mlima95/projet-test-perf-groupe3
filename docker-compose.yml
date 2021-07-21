@@ -42,18 +42,6 @@ services:
     networks:
       - dev
 
-  client:
-    image: node:alpine3.10
-    container_name: client
-    ports:
-      - 3000:3000
-    environment:
-      API_URL: http://localhost:3000
-    volumes:
-      - ./client:/home/node/app
-    working_dir: /home/node/app
-    command: sh -c "npm install --no-update-notifier; npm start --no-update-notifier"
-
 networks:
   dev:
 

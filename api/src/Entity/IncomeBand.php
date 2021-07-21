@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * IncomeBand
- *
+ * @ApiResource()
  * @ORM\Table(name="income_band")
  * @ORM\Entity
  */
