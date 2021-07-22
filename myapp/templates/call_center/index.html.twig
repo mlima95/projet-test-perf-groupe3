@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CallCenter index{% endblock %}
+
+{% block body %}
+    <h1>CallCenter index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>CcCallCenterSk</th>
+                <th>CcCallCenterId</th>
+                <th>CcRecStartDate</th>
+                <th>CcRecEndDate</th>
+                <th>CcName</th>
+                <th>CcClass</th>
+                <th>CcEmployees</th>
+                <th>CcSqFt</th>
+                <th>CcHours</th>
+                <th>CcManager</th>
+                <th>CcMktId</th>
+                <th>CcMktClass</th>
+                <th>CcMktDesc</th>
+                <th>CcMarketManager</th>
+                <th>CcDivision</th>
+                <th>CcDivisionName</th>
+                <th>CcCompany</th>
+                <th>CcCompanyName</th>
+                <th>CcStreetNumber</th>
+                <th>CcStreetName</th>
+                <th>CcStreetType</th>
+                <th>CcSuiteNumber</th>
+                <th>CcCity</th>
+                <th>CcCounty</th>
+                <th>CcState</th>
+                <th>CcZip</th>
+                <th>CcCountry</th>
+                <th>CcGmtOffset</th>
+                <th>CcTaxPercentage</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for call_center in call_centers %}
+            <tr>
+                <td>{{ call_center.ccCallCenterSk }}</td>
+                <td>{{ call_center.ccCallCenterId }}</td>
+                <td>{{ call_center.ccRecStartDate ? call_center.ccRecStartDate|date('Y-m-d') : '' }}</td>
+                <td>{{ call_center.ccRecEndDate ? call_center.ccRecEndDate|date('Y-m-d') : '' }}</td>
+                <td>{{ call_center.ccName }}</td>
+                <td>{{ call_center.ccClass }}</td>
+                <td>{{ call_center.ccEmployees }}</td>
+                <td>{{ call_center.ccSqFt }}</td>
+                <td>{{ call_center.ccHours }}</td>
+                <td>{{ call_center.ccManager }}</td>
+                <td>{{ call_center.ccMktId }}</td>
+                <td>{{ call_center.ccMktClass }}</td>
+                <td>{{ call_center.ccMktDesc }}</td>
+                <td>{{ call_center.ccMarketManager }}</td>
+                <td>{{ call_center.ccDivision }}</td>
+                <td>{{ call_center.ccDivisionName }}</td>
+                <td>{{ call_center.ccCompany }}</td>
+                <td>{{ call_center.ccCompanyName }}</td>
+                <td>{{ call_center.ccStreetNumber }}</td>
+                <td>{{ call_center.ccStreetName }}</td>
+                <td>{{ call_center.ccStreetType }}</td>
+                <td>{{ call_center.ccSuiteNumber }}</td>
+                <td>{{ call_center.ccCity }}</td>
+                <td>{{ call_center.ccCounty }}</td>
+                <td>{{ call_center.ccState }}</td>
+                <td>{{ call_center.ccZip }}</td>
+                <td>{{ call_center.ccCountry }}</td>
+                <td>{{ call_center.ccGmtOffset }}</td>
+                <td>{{ call_center.ccTaxPercentage }}</td>
+                <td>
+                    <a href="{{ path('call_center_show', {'ccCallCenterSk': call_center.ccCallCenterSk}) }}">show</a>
+                    <a href="{{ path('call_center_edit', {'ccCallCenterSk': call_center.ccCallCenterSk}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="30">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('call_center_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,134 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CallCenter{% endblock %}
+
+{% block body %}
+    <h1>CallCenter</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>CcCallCenterSk</th>
+                <td>{{ call_center.ccCallCenterSk }}</td>
+            </tr>
+            <tr>
+                <th>CcCallCenterId</th>
+                <td>{{ call_center.ccCallCenterId }}</td>
+            </tr>
+            <tr>
+                <th>CcRecStartDate</th>
+                <td>{{ call_center.ccRecStartDate ? call_center.ccRecStartDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>CcRecEndDate</th>
+                <td>{{ call_center.ccRecEndDate ? call_center.ccRecEndDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>CcName</th>
+                <td>{{ call_center.ccName }}</td>
+            </tr>
+            <tr>
+                <th>CcClass</th>
+                <td>{{ call_center.ccClass }}</td>
+            </tr>
+            <tr>
+                <th>CcEmployees</th>
+                <td>{{ call_center.ccEmployees }}</td>
+            </tr>
+            <tr>
+                <th>CcSqFt</th>
+                <td>{{ call_center.ccSqFt }}</td>
+            </tr>
+            <tr>
+                <th>CcHours</th>
+                <td>{{ call_center.ccHours }}</td>
+            </tr>
+            <tr>
+                <th>CcManager</th>
+                <td>{{ call_center.ccManager }}</td>
+            </tr>
+            <tr>
+                <th>CcMktId</th>
+                <td>{{ call_center.ccMktId }}</td>
+            </tr>
+            <tr>
+                <th>CcMktClass</th>
+                <td>{{ call_center.ccMktClass }}</td>
+            </tr>
+            <tr>
+                <th>CcMktDesc</th>
+                <td>{{ call_center.ccMktDesc }}</td>
+            </tr>
+            <tr>
+                <th>CcMarketManager</th>
+                <td>{{ call_center.ccMarketManager }}</td>
+            </tr>
+            <tr>
+                <th>CcDivision</th>
+                <td>{{ call_center.ccDivision }}</td>
+            </tr>
+            <tr>
+                <th>CcDivisionName</th>
+                <td>{{ call_center.ccDivisionName }}</td>
+            </tr>
+            <tr>
+                <th>CcCompany</th>
+                <td>{{ call_center.ccCompany }}</td>
+            </tr>
+            <tr>
+                <th>CcCompanyName</th>
+                <td>{{ call_center.ccCompanyName }}</td>
+            </tr>
+            <tr>
+                <th>CcStreetNumber</th>
+                <td>{{ call_center.ccStreetNumber }}</td>
+            </tr>
+            <tr>
+                <th>CcStreetName</th>
+                <td>{{ call_center.ccStreetName }}</td>
+            </tr>
+            <tr>
+                <th>CcStreetType</th>
+                <td>{{ call_center.ccStreetType }}</td>
+            </tr>
+            <tr>
+                <th>CcSuiteNumber</th>
+                <td>{{ call_center.ccSuiteNumber }}</td>
+            </tr>
+            <tr>
+                <th>CcCity</th>
+                <td>{{ call_center.ccCity }}</td>
+            </tr>
+            <tr>
+                <th>CcCounty</th>
+                <td>{{ call_center.ccCounty }}</td>
+            </tr>
+            <tr>
+                <th>CcState</th>
+                <td>{{ call_center.ccState }}</td>
+            </tr>
+            <tr>
+                <th>CcZip</th>
+                <td>{{ call_center.ccZip }}</td>
+            </tr>
+            <tr>
+                <th>CcCountry</th>
+                <td>{{ call_center.ccCountry }}</td>
+            </tr>
+            <tr>
+                <th>CcGmtOffset</th>
+                <td>{{ call_center.ccGmtOffset }}</td>
+            </tr>
+            <tr>
+                <th>CcTaxPercentage</th>
+                <td>{{ call_center.ccTaxPercentage }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('call_center_index') }}">back to list</a>
+
+    <a href="{{ path('call_center_edit', {'ccCallCenterSk': call_center.ccCallCenterSk}) }}">edit</a>
+
+    {{ include('call_center/_delete_form.html.twig') }}
+{% endblock %}
