@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Inventory
  * 
  * @ORM\Table(name="inventory", indexes={@ORM\Index(name="inv_i", columns={"inv_item_sk"}), @ORM\Index(name="inv_w", columns={"inv_warehouse_sk"}), @ORM\Index(name="IDX_B12D4A3685E678F8", columns={"inv_date_sk"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\InventoryRepository")
  */
 class Inventory
 {
