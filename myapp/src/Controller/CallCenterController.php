@@ -48,7 +48,7 @@ class CallCenterController extends AbstractController
     }
 
     /**
-     * @Route("/delete/{ccCallCenterSk}", name="call_center_normal_get", methods={"DELETE"})
+     * @Route("/delete/{ccCallCenterSk}", name="call_center_normal_delete", methods={"DELETE"})
      */
     public function delete_get(CallCenter$callCenter, CallCenterRepository $callCenterRepository): JsonResponse
     {
