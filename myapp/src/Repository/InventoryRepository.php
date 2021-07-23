@@ -23,10 +23,10 @@ class InventoryRepository extends ServiceEntityRepository
      * @return Inventory[] Returns an array of Inventory objects
       */
 
-    public function findAllLimit()
+    public function findAllLimit($limit)
     {
         return $this->createQueryBuilder('i')
-            ->setMaxResults(800000)
+            ->setMaxResults($limit)
             ->getQuery()
             ->getResult()
         ;

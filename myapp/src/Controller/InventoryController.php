@@ -21,7 +21,7 @@ class InventoryController extends AbstractController
      */
     public function index(InventoryRepository $inventoryRepository){
         ini_set('memory_limit', '-1');
-        $listInventory = $inventoryRepository->findAllLimit();
+        $listInventory = $inventoryRepository->findAllLimit(800000);
         $response = [];
 
         foreach ($listInventory as $inventory) {
