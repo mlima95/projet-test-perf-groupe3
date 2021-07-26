@@ -44,7 +44,9 @@ class CallCenterController extends AbstractController
         ];
 
         // return in json format
-        return new JsonResponse($responseArray);
+        return new JsonResponse($responseArray, 200, [
+            'Access-Control-Allow-Origin' => '*',
+        ]);
     }
 
     /**
@@ -64,7 +66,9 @@ class CallCenterController extends AbstractController
         ];
 
         // return in json format
-        return new JsonResponse($responseArray);
+        return new JsonResponse($responseArray, 200, [
+            'Access-Control-Allow-Origin' => '*',
+        ]);
     }
 
 
@@ -96,7 +100,9 @@ class CallCenterController extends AbstractController
         ];
 
         // return in json format
-        return new JsonResponse($responseArray);
+        return new JsonResponse($responseArray, 200, [
+            'Access-Control-Allow-Origin' => '*',
+        ]);
     }
 
 }

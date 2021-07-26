@@ -39,6 +39,8 @@ class StoreReturnsController extends AbstractController
         ];
 
         // return in json format
-        return new JsonResponse($responseArray);
+        return new JsonResponse($responseArray, 200, [
+            'Access-Control-Allow-Origin' => '*',
+        ]);
     }
 }

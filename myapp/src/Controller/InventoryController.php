@@ -17,11 +17,11 @@ class InventoryController extends AbstractController
     /**
      * @param InventoryRepository $inventoryRepository
      * @return JsonResponse
-     * @Route("/", name="inventory_index", methods={"GET"})
+     * @Route("/{limit}", name="inventory_index", methods={"GET"})
      */
-    public function index(InventoryRepository $inventoryRepository){
+    public function index(InventoryRepository $inventoryRepository, $limit){
         ini_set('memory_limit', '-1');
-        $listInventory = $inventoryRepository->findAllLimit(800000);
+        $listInventory = $inventoryRepository->findAllLimit((int)$limit ?: 800000);
         $response = [];
 
         foreach ($listInventory as $inventory) {
@@ -39,7 +39,9 @@ class InventoryController extends AbstractController
         ];
 
         // return in json format
-        return new JsonResponse($responseArray);
+        return new JsonResponse($responseArray, 200, [
+            'Access-Control-Allow-Origin' => '*',
+        ]);
     }
 
 }
