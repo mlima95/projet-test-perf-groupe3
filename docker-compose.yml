@@ -31,14 +31,14 @@ services:
     container_name: blackfire_perf
     image: blackfire/blackfire:2
     ports:
-      - 8707:8707
+      - 8307:8307
     environment:
       # Exposes BLACKFIRE_* environment variables from the host
       BLACKFIRE_LOG_LEVEL: 4
-      BLACKFIRE_CLIENT_ID: "7a0b22d2-8137-495f-be27-19de102ae8ee"
-      BLACKFIRE_CLIENT_TOKEN: "206b0d67ced9bfc5ee1e99f51798839801c90b29c4a0e775e772084484b002e0"
-      BLACKFIRE_SERVER_ID: "010dca3b-b106-4c2f-b1bc-677116255071"
-      BLACKFIRE_SERVER_TOKEN: "75a2ec81dc414ef938fc177cf1e5207aedb97467b62fef847e1fb38bca23abce"
+      BLACKFIRE_CLIENT_ID: "7fa1081c-f261-4454-9531-2df726365290"
+      BLACKFIRE_CLIENT_TOKEN: "a9686d0ed4e3b90acee451092bdf451c5189f5f0eed09b4df99f598bd3e25b91"
+      BLACKFIRE_SERVER_ID: "7a8cca5a-f647-4e8e-861d-4a3d8bc919b1"
+      BLACKFIRE_SERVER_TOKEN: "f1d4dfd878a11a0c6b41767a17d5faf47f3de2554297183238006f455ed7525a"
     networks:
       - dev
 
@@ -57,6 +57,7 @@ services:
     image: grafana/grafana:latest
     networks:
       - grafana
+      - dev
     ports:
       - "3000:3000"
     environment:
@@ -77,6 +78,40 @@ services:
     volumes:
       - ./k6/scripts:/scripts
 
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus/config:/etc/prometheus/
+      - ./prometheus/data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    expose:
+      - 9090
+    ports:
+      - 9090:9090
+    links:
+      - node-exporter:node-exporter
+    networks:
+      - dev
+
+  node-exporter:
+    image: prom/node-exporter
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - --collector.filesystem.ignored-mount-points
+      - "^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)"
+    ports:
+      - 9100:9100
+    networks:
+      - dev
+    deploy:
+      mode: global
 
 networks:
   dev:

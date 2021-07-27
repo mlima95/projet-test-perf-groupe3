@@ -34,13 +34,8 @@ const BASE_URL = 'http://www:8741';
 
 
 export default () => {
-	let authHeaders = {
-		headers: {
-			"Content-Type": `application/json; charset=utf-8`,
-		},
-	};
 
-	let myObjects = http.get(`${BASE_URL}/call/center/normal/`, authHeaders).json();
+	let myObjects = http.get(`${BASE_URL}/call/center/normal/`).json();
 	check(myObjects, { 'retrieved crocodiles': (obj) => obj.length > 0 });
 	sleep(1);
 };
