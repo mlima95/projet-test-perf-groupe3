@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang='fr'>
+
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, viewport-fit=cover' />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.min.css'
+        integrity='sha512-Z6UIAdEZ7JNzeX5M/c5QZj+oqbldGD+E8xJEoOwAx5e0phH7kdjsWULGeK5l2UjehKtChHDaUY2rQAF/NEiI9w=='
+        crossorigin='anonymous' referrerpolicy='no-referrer' />
+<!--  <link rel='stylesheet' href='./node_modules/@fortawesome/fontawesome-free/css/all.min.css'>-->
+  <meta name='Description' content='Put your description here.'>
+  <base href='/'>
+  <title>Doogle Goc</title>
+  <style>
+    body, h1 {
+      font-family: "Raleway", sans-serif
+    }
+
+    body, html {
+      height: 100%;
+      background: #dcdcdc;
+    }
+  </style>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #ededed;
+    }
+  </style>
+  <link rel='manifest' href='./src/manifest.webmanifest' />
+</head>
+<body>
+<app-navbar></app-navbar>
+<header class='w3-row w3-center w3-animate-opacity'>
+  <h1 class='w3-jumbo w3-animate-top '>Doogle Goc</h1>
+  <hr class='w3-border-grey' style='margin:auto;width:40%'>
+</header>
+<main id='outlet' class='w3-row w3-container w3-center w3-content '></main>
+<script type='module' src='./out-tsc/src/doogle-goc.js'></script>
+</body>
+
+</html>

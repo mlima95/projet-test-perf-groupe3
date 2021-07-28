@@ -1,0 +1,14 @@
+{
+  "name": "Doogle Goc",
+  "short_name": "DC",
+  "start_url": "../index.html",
+  "offline_enabled": "true",
+  "display": "standalone",
+  "background_color": "#2A3443",
+  "theme_color": "#2A3443",
+  "icons": [{
+    "src": "assets/image/icone/app-ico.png",
+    "sizes": "452x452",
+    "type": "image/png"
+  }]
+}
